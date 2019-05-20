@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <limits.h>
-#define kullanilmayacak_fonksiyon(x, y) kullanilmayacak_fonksiyon_## x ((y))
+#define kullanilmayacak_fonksiyon(x, y) kullanilmayacak_fonksiyon_##x((y))
 
 #if __LONG_MAX__ == __LONG_LONG_MAX__
   typedef long int mylong;
@@ -11,10 +11,11 @@
 
 void short_loop(){
   int value = 0;
-  short int i = SHRT_MIN;
-  for(; i < SHRT_MAX;i++){
+  short int i;
+  for(i = SHRT_MIN; i < SHRT_MAX; i++) {
     value++;
   }
+
   printf("value = %d\n", value);
 }
 
@@ -34,16 +35,19 @@ int main(){
   printf("Size of long long int: %ld\n", sizeof(long long int));
 
   #ifdef __linux
-    printf("Linux kullandığınız için tebrik ederim.\n");
+    printf("Linux kullandiginiz icin tebrik ederim.\n");
   #else
-    printf("Linux kullanmadığınız için teessüf ederiz!\n");
+    printf("Linux kullanmadiginiz icin teessuf ederiz!\n");
   #endif
 
   short_loop();
 
   int a = 1;
-  kullanilmayacak_fonksiyon(short, a);
+  kullanilmayacak_fonksiyon(short,a);
+  kullanilmayacak_fonksiyon_short(a);
   kullanilmayacak_fonksiyon(int, a);
+  kullanilmayacak_fonksiyon_int(a);
+
   kullanilmayacak_fonksiyon_short(1);
   kullanilmayacak_fonksiyon_int(2);
 

@@ -7,9 +7,9 @@ void hanoi(){
   int *s1;
   int *s2;
   
-  s0 = (int*)malloc(4 * sizeof(int)); *s0 = 255;
-  s1 = (int*)malloc(4 * sizeof(int)); *s1 = 255;
-  s2 = (int*)malloc(4 * sizeof(int)); *s2 = 255;
+  s0 = (int *) malloc (4 * sizeof(int)); *s0 = 255;
+  s1 = (int *) malloc (4 * sizeof(int)); *s1 = 255;
+  s2 = (int *) malloc (4 * sizeof(int)); *s2 = 255;
 
   *(++s0) = 3;
   *(++s0) = 2;
@@ -28,7 +28,6 @@ void hanoi(){
 
   printf("\nYENİ:\n");
   print_hanoi_towers(s0, s1, s2);
-
 
 }
 

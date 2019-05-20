@@ -20,13 +20,13 @@ void sub(int a, int b){
 void mul(int a, int b){
   printf("a / b = %f\n", (double)a/(double)b);
 }
-void (*islem[])(int a, int b) = {add, sub, mul};
+// fonksiyon pointer array'i
+void (*islem[])(int, int) = {add, sub, mul};  // (*islem[])(int a, int b)
 
 int main(void){
   mata mat1, mat2;
 
   int a = 5, b = 10;
-
   for(int i = 0; i < 3; i++){
     // Aman Allah'ım :O
     // C dilinde böyle bir şey de mi varmış o.O
